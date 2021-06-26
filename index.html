@@ -1,0 +1,756 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> flipkard </title>
+<!---Font Awesome Icon Libray---->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	  rel="stylesheet">
+
+
+
+<style>
+
+
+<!-------css code for searching box------>
+ .dropbtn 
+{
+
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+#myInput 
+{
+ 
+  box-sizing: border-box;
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+
+}
+
+#myInput:focus 
+{
+outline: 3px solid #ddd;
+}
+
+.sarch 
+{
+  position: relative;
+  display: inline-block;
+}
+
+.sarch-content 
+{
+  display: none;
+  position: absolute; 
+  background-color: #f6f6f6;
+  width: 550px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.sarch-content a 
+{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.sarch a:hover 
+{
+background-color:#ddd;
+}
+
+.show 
+{
+display: block;
+}
+
+<!--------css code for searching box------>
+*{
+padding:0;
+margin:0;
+
+}
+
+.dropbtn{ 
+width:550px;
+height:32px;
+border: double 1px transparent;
+
+}
+
+.but{
+width:120px;
+height:38px;
+
+}
+
+
+<!-------css of navigaction bar------>
+.btn1:hover{
+  color:block;
+  }
+
+.topnav {
+ display: flex;
+	justify-content: space-around;
+ width:100%;
+  overflow: hidden;
+  background-color:black;
+  background-color: #333;
+}
+
+.topnav a {
+
+   float:left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:#ddd;
+  color: black;
+}
+
+.topnav a.active {
+      
+  background-color: ;
+  color: white;
+  }
+  
+  
+  
+  
+
+  
+  
+
+<!-------css of navigaction bar------>
+
+.but2{
+width:150px;
+height:30px;
+color:#fff;
+background-color:blue;
+
+}
+
+
+
+
+
+footer {
+
+background-color: #777;
+ color:white;
+
+}
+
+
+.fsr{
+width:350px;
+height:32px;
+
+}
+
+.fsb{
+width:120px;
+height:38px;
+
+}
+
+ .ff {
+   color:white;
+
+}
+  .zoom:hover{
+  Z-index:1;
+  transform: scale(1.25);
+  box-shadow:0 25px 40px rbg(0,0,0,.5);
+  } 
+
+ .opction  ul {
+
+ list-style:none;
+ color:white;
+ font-size: 17px;
+ 
+ }
+
+
+<!----- csss of all cotegeri Dropdown ---->
+
+.dropdown {
+position:overflow;
+display: inline-block;
+font-size:30px;
+color:#f9f9f9;
+
+}
+.dropdown-content{
+  font-size:17px;
+display:none ;
+position:absolute;
+background-color:blue;
+min-width:160px;
+box-shadow: 0px 5px 16px rbg(0,0,0,0.2);
+padding: 12px 16px;
+z-index: 1;
+list-style:none;
+}
+
+.dropdown-content  ul {
+   height:100px;
+   list-style:none;
+  } 
+
+.dropdown:hover .dropdown-content{
+display: block;
+
+}
+
+
+.all:hover{
+background-color:#ddd;
+}
+
+.all {
+ font-size:30px;
+  color:#fff;
+}
+
+<!-----csss of all cotegeri Dropdown  ----->
+
+<!---Font Awesome Icon Libray---->
+.fa {
+ text-align:center;
+ text-decoration: none;
+ font-size:18px;
+}
+<!---Font Awesome Icon Libray---->
+
+
+
+<!-------css code for image salider ------>
+.mySlides {display:none;}
+<!-------css code for image salider------>
+
+<!-------css code for offertime------>
+p {
+  font-size: 60px;
+
+}
+<!-------css code for end offer time------>
+
+</style>
+
+ <link rel="stylesheet" type="text/css" href=" .css">
+
+    <!----        ="   ------>
+</head>
+
+<body bgcolor="#f1f3f6" >
+
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "3c2716f8-e62e-4195-9cd8-238929b72245", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "b97f9723-13f4-43fd-bedf-78dd541dd485", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+
+
+
+
+
+
+
+
+  
+<table border="0" width="100%"  bgcolor="#2874F0" >
+
+<tr>
+<td align="right"><img src="New/l.jpg"> </td>
+
+
+<!---- search for dropdown------>
+
+<td class="sarch"> <input class="dropbtn" onclick="myFunction()" type="text" placeholder="Search...." id="myInput" onkeyup="filterFunction()">
+   
+ 
+ 
+ <div id="myDropdown" class="sarch-content ">
+    <a href="#about"> <i class="fa fa-search"></i>  Mobiles</a>
+    <a href="#base"> <i class="fa fa-search"></i>  Tablets </a>
+    <a href="#blog">  <i class="fa fa-search"></i>  Accessories</a>
+    <a href="#contact"> <i class="fa fa-search"></i> Electronics</a>
+
+  </div>
+  
+
+
+<input type="button" class="but" value="search"  >
+</td>
+<th> <font color="white">Login & sinup </font></th>
+<th> <font color="white">more </font></th>
+<th><img src="New/l.jpg"> </th>
+</tr>
+</table>
+
+
+<div class="topnav">
+ 
+  <div  class="dropdown" >
+     <span class="all">  All  </span>
+       <div class="dropdown-content">
+          <div class="">
+	        
+              <li><a href="#news"> <i class="fa fa-mobile"> </i> Mobile </a></li>
+              <li> <a href="#contact"> <i class="fa fa-tablet"> </i> Tablets</a> </li>
+              <li> <a href="#about"> <i class="fa fa-desktop"> </i> Laptops</a> </li>
+              <li> <a class="active" href="#home"> <i class="fa fa-plug"> </i> Accessories</a> </li>
+              <li> <a href="#news"> <i class="fa fa-camera-retro"></i>  Electronics <i class="fa fa-caret-down"> </i> </a> </li>
+              <li>  <a href="#contact"> <i class="fa fa-television"> </i> TV</a> </li>
+              <li> <a href="#about"> <i class="fa fa-male"> </i> Men</a> </li>
+              <li> <a href="#about"> <i class="fa fa-female"> </i> Women</a> </li>
+              <li> <a href="#about"> <i class="fa fa-child"> </i> Kinds</a> </li>
+			  <li> <a href="#about"> <i class="fa fa-cutlery"> </i> Appliances</a> </li> 
+			  
+	       <ul>  </ul>
+        
+        </div>
+    </div>
+   </div>
+   
+   
+        <a href="#news"> <i class="fa fa-mobile"> </i> Mobile </a>
+        <a href="#contact"> <i class="fa fa-tablet"> </i> Tablets</a>
+        <a href="#about"> <i class="fa fa-desktop"> </i> Laptops</a>
+        <a class="active" href="#home"> <i class="fa fa-plug"> </i> Accessories</a>
+        <a href="#news"> <i class="fa fa-camera-retro"></i>  Electronics <i class="fa fa-caret-down"> </i> </a>
+        <a href="#contact"> <i class="fa fa-television"> </i> TV</a>
+        <a href="#about"> <i class="fa fa-male"> </i> Men</a>
+        <a href="#about"> <i class="fa fa-female"> </i> Women</a>
+        <a href="#about"> <i class="fa fa-child"> </i> Kinds</a>
+     	 <a href="#about"> <i class="fa fa-cutlery"> </i> Appliances</a> 
+</div>
+
+
+<div  class="w3-content w3section"  style ="max-width:1350px"  >
+      <img  class="mySlides"  src="New/sd1.jpg" height="40%" width="100%" >
+      <img  class="mySlides" src="New/sd2.jpg" height="40%" width="100%" >
+      <img class="mySlides" src="New/sd3.jpg" height="40%" width="100%" >
+</div>
+</table>
+<br><br>
+
+
+<div>
+ 
+<table border="0" width="100%"  bgcolor="white" >
+ <tr>
+ <td colspan="5" > <h2> Deals of the day:</h2> 
+ <p id="demo" style="color:gray; font-size: 25px; margin-top: -48px; margin-left:180px;"></p>
+  <p style="color:gray; font-size: 25px; margin-top: -53px; margin-left:351px;"> Left</p>  <hr> </td>
+  
+  
+  
+  
+<tr >
+<th > <img src="New/bag1.jpg" width="100%" class="zoom" > </th>
+<th > <img src="New/bag2.jpg" width="100%" class="zoom" > </th>
+<th> <img src="New/bag3.jpg" width="100%" class="zoom" > </th>
+<th > <img src="New/bag4.jpg" width="100%" class="zoom"> </th>
+<th >    <img src="New/bag5.jpg" width="100%" class="zoom">  </th >
+</tr>
+
+<tr>
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;"  ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+</tr>
+
+<tr>
+<th><font color="green"><b>Price: 499/-</b> </font></th>
+<th><font color="green"><b>Price: 599/-</b> </font></th>
+<th><font color="green"><b>Price: 799/-</b> </font></th>
+<th><font color="green"><b>Price: 699/-</b> </font></th>
+<th><font color="green"><b>Price: 399/-</b> </font></th>
+
+<tr>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th><a  <a href="image zoom2.html">  <input type="button" value="Show Details" class="but2"></a> </th>
+</tr>
+</table>
+
+</div>
+
+<br>
+<table class="table2" border="0" width="100%"  bgcolor="white" >
+ <tr>
+ <td colspan="5" > <h2> school bag & troli bag <h2> <hr> </td>
+<tr>
+<th > <img src="New/bag6.jpg" width="100%" class="zoom" > </th>
+<th > <img src="New/bag7.jpg" width="100%" class="zoom" > </th>
+<th> <img src="New/bag8.jpg" width="100%" class="zoom" > </th>
+<th > <img src="New/bag9.jpg" width="100%"class="zoom"  > </th> 
+<th > <img src="New/bag10.jpg" width="100%" class="zoom" > </th>
+</tr>
+
+<tr>
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+</tr>
+
+
+<tr>
+<th><font color="green"><b>Price: 999/-</b> </font></th>
+<th><font color="green"><b>Price: 1099/-</b> </font></th>
+<th><font color="green"><b>Price: 975/-</b> </font></th>
+<th><font color="green"><b>Price: 899/-</b> </font></th>
+<th><font color="green"><b>Price: 1199/-</b> </font></th>
+</tr>
+
+<tr>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+
+</table>
+
+
+
+
+<br>
+<table class="table3" border="0" width="100%"  bgcolor="white" >
+ <tr>
+ <td colspan="5" > <h2> earphones  <h2> <hr> </td>
+<tr>
+<th > <img src="New/ear1.jpg" width="100%" class="zoom" > </th>
+<th > <img src="New/ear2.jpg" width="100%" class="zoom" > </th>
+<th> <img src="New/ear3.jpg" width="100%" class="zoom" > </th>
+<th > <img src="New/ear4.jpg" width="100%" class="zoom" > </th>
+<th > <img src="New/ear5.jpg" width="100%" class="zoom" > </th>
+</tr>
+
+<tr>
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+<th>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star-half-o checked" style="color:orange;" ></span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star checked" style="color:orange;" > </span>
+<span class="fa fa-star" style="color:orange;" > </span>
+<span class="fa fa-star"  > </span>
+</th>
+
+
+
+<tr>
+<th><font color="green"><b>Price: 399/-</b> </font></th>
+<th><font color="green"><b>Price: 599/-</b> </font></th>
+<th><font color="green"><b>Price: 475/-</b> </font></th>
+<th><font color="green"><b>Price: 679/-</b> </font></th>
+<th><font color="green"><b>Price: 499/-</b> </font></th>
+</tr>
+
+<tr>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+<th> <input type="button" value="Show Details" class="but2"></th>
+</tr>
+</table>
+ <tr>
+ <td colspan=" " > <hr> </td>
+<tr>
+</br>
+</br>
+</br>
+
+
+
+<footer>
+<table border="0" width="100%" >
+
+<tr>
+<td><font color="#fff"> <b> Quick Link </b> </td> 
+<td> <font color="#fff"> <b> Follow Us </b> </td> 
+<td> <font color="#fff"> <b> Contact </b> </td> 
+<td> <font color="#fff"> <b>Search </b> </td> 
+</tr>
+
+<tr>
+<td> 
+ <ul> 
+  <li>  <a class="ff" href="#" > <font color="#fff" > Electronics </font> </a> </li>
+  <li> <a class="ff" href="#" > <font color="#fff" >  TV & appliance </a> </li>
+  <li> <a class="ff" href="#" ><font color="#fff" >Earphones </a> </li>
+  <li> <a class="ff" href="#" ><font color="#fff" >School Bags </a> </li>
+  <li> <a class="ff" href="#" ><font color="#fff" >Mobiles </a> </li>
+ 
+</ul>
+</td>
+
+<td> 
+ <ul>
+  <li> <a class="ff" href="#" > Facebook </a> </li>
+  <li> <a class="ff" href="#" > Twitter </a> </li>
+  <li> <a class="ff" href="#" > Instagram </a> </li>
+  <li> <a class="ff" href="#" > Youtube </a> </li>
+  <li> <a class="ff" href="#" >Email </a> </li>
+</ul>
+</td>
+
+<td> 
+ <ul>
+  <li> <a class="ff" href="#" ><i> shashi kumar </i></a> </li>
+  <li> <a class="ff" href="#" > +91 8507684821 </a> </li>
+  <li> <a class="ff" href="#" > India </a> </li>
+  <li> <a class="ff" href="#" > 841232 </a> </li>
+</ul>
+</td>
+
+
+<td> <input type="taxt" placeholder="Search ME" class="fsr" >
+     <input type="button" value="Search" class="fsb" > </td>
+
+</tr>
+</footer>
+
+
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+
+
+
+</script>
+
+<!------ java script for imageslider----->
+<script>
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+<!------ java script for imageslider----->
+
+
+
+
+<!------ java script for offer time----->
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 05, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<!------ java script for offer time end----->
+
+
+
+
+
+</body>
+</html> 
